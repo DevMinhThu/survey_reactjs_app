@@ -15,6 +15,20 @@ function Login() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
+  // handle login
+  const handleLogin = () => {
+    if (user == "thu" && password == "123") {
+      history.push("/home");
+    } else {
+      alert("Wrong password or account!");
+    }
+  };
+
+  // handle register
+  const handleRegister = () => {
+    history.push("/register");
+  };
+
   return (
     <div className="container">
       <div className="login">
@@ -35,17 +49,7 @@ function Login() {
           <input type="checkbox"></input>
           <span>Remember me</span>
           <a href="#">Forgot password?</a>
-          <button
-            onClick={() => {
-              if (user == "Thu" && password == "123") {
-                history.push("/home");
-              } else {
-                alert("Wrong password or account!");
-              }
-            }}
-          >
-            Log In
-          </button>
+          <button onClick={handleLogin}>Sign In</button>
           <hr />
           <p>Or Connect With</p>
           <hr />
@@ -68,12 +72,8 @@ function Login() {
           <BsPeopleCircle size="10.5rem" />
           <h2>Hello world!</h2>
           <p>Welcome to the Survey Website</p>
-          <button
-            onClick={() => {
-              history.push("/register");
-            }}
-          >
-            Register <FaArrowAltCircleRight size="1rem" />
+          <button onClick={handleRegister}>
+            Sign Up <FaArrowAltCircleRight size="1rem" />
           </button>
         </div>
       </div>

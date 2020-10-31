@@ -5,6 +5,7 @@ import "./Register.css";
 function Register() {
   let history = useHistory();
   const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
@@ -14,9 +15,15 @@ function Register() {
           <h1>Sign Up</h1>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="User Name"
             value={user}
             onChange={(e) => setUser(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"

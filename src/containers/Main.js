@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Main.css";
 
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Login from "../screens/Login/Login";
 import Register from "../screens/Register/Register";
