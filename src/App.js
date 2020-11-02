@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import Main from "./containers/Main";
-// import Home from "./screens/Home/Home";
 
 function App() {
   return (
