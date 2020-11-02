@@ -67,13 +67,14 @@ function Login() {
           <span className="copyright">&copy;2020</span>
         </div>
       </div>
+      {/* register */}
       <div className="register">
         <div className="container">
           <BsPeopleCircle size="10.5rem" />
           <h2>Hello world!</h2>
           <p>Welcome to the Survey Website</p>
           <button onClick={handleRegister}>
-            Sign Up <FaArrowAltCircleRight size="1rem" />
+            Register <FaArrowAltCircleRight size="1rem" />
           </button>
         </div>
       </div>

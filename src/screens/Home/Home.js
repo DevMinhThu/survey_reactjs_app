@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Select } from "antd";
+import { Menu } from "antd";
 import "antd/dist/antd.css";
 import "./Home.css";
 
 import Profile from "../../assets/profile.jpg";
-import iconDashboard from "../../assets/icon-dashboard.svg";
-import arrowDown from "../../assets/arrow-down.svg";
-import iconEdit from "../../assets/icon-edit.svg";
-import iconBook from "../../assets/icon-book.svg";
-import iconUser from "../../assets/icon-user.svg";
-import iconLogout from "../../assets/icon-logout.svg";
+import arrowRight from "../../assets/arrow-right.svg";
 import arrowRightBlack from "../../assets/arrow-right-black.svg";
 
-const { Option } = Select;
+import {
+  UserOutlined,
+  DashboardOutlined,
+  LogoutOutlined,
+  FormOutlined,
+  SwitcherOutlined,
+  BarChartOutlined,
+} from "@ant-design/icons";
+
+const { SubMenu } = Menu;
 
 function Home() {
   let history = useHistory();
@@ -37,78 +41,46 @@ function Home() {
                 <p className="left__name">Hello World</p>
               </div>
 
-              {/* menu */}
-              <ul className="left__menu">
-                {/* dashboard */}
-                <li className="left__menuItem">
-                  <a href="index.html" className="left__title">
-                    <img src={iconDashboard} alt="" />
-                    Dashboard
-                  </a>
-                </li>
-                {/* function */}
-                <li
-                  efaultValue="Thêm bài viết"
-                  style={{ border: '0' }}
-                  className="left__menuItem"
+              <Menu
+                defaultSelectedKeys={["1"]}
+                defaultOpenKeys={["sub1"]}
+                mode="inline"
+                style={{ border: 0 }}
+              >
+                <Menu.Item key="1" icon={<DashboardOutlined />}>
+                  Dashboard
+                </Menu.Item>
+                <Menu.Item key="2" icon={<BarChartOutlined />}>
+                  Create Survey
+                </Menu.Item>
+
+                <SubMenu key="sub1" icon={<FormOutlined />} title="Function">
+                  <Menu.Item key="3">Add Question</Menu.Item>
+                  <Menu.Item key="4">Edit Question</Menu.Item>
+                  <Menu.Item key="5">Delete Question</Menu.Item>
+                </SubMenu>
+
+                <SubMenu
+                  key="sub2"
+                  icon={<SwitcherOutlined />}
+                  title="Category"
                 >
-                  <div className="left__title">
-                    <img src={iconEdit} alt="" />
-                    Function
-                    <img className="left__iconDown" src={arrowDown} alt="" />
-                  </div>
-                  <div className="left__text">
-                    <a className="left__link" href="insert_p_category.html">
-                      Thêm bài viết
-                    </a>
-                    <a className="left__link" href="view_p_category.html">
-                      Sửa bài viết
-                    </a>
-                    <a className="left__link" href="view_p_category.html">
-                      Xóa bài viết
-                    </a>
-                  </div>
-                </li>
-                {/* category */}
-                <li className="left__menuItem">
-                  <div className="left__title">
-                    <img src={iconBook} alt="" />
-                    Category
-                    <img className="left__iconDown" src={arrowDown} alt="" />
-                  </div>
-                  <div className="left__text">
-                    <a className="left__link" href="insert_category.html">
-                      Add Category
-                    </a>
-                    <a className="left__link" href="view_category.html">
-                      See Category
-                    </a>
-                  </div>
-                </li>
-                {/* admin */}
-                <li className="left__menuItem">
-                  <div className="left__title">
-                    <img src={iconUser} alt="" />
-                    Admin
-                    <img className="left__iconDown" src={arrowDown} alt="" />
-                  </div>
-                  <div className="left__text">
-                    <a className="left__link" href="insert_admin.html">
-                      Add Admin
-                    </a>
-                    <a className="left__link" href="view_admins.html">
-                      See Admins
-                    </a>
-                  </div>
-                </li>
-                {/* log out */}
-                <li className="left__menuItem">
-                  <a href="" className="left__title" onClick={handleLogout}>
-                    <img src={iconLogout} alt="" />
-                    Log out
-                  </a>
-                </li>
-              </ul>
+                  <Menu.Item key="6">Text Question</Menu.Item>
+                  <Menu.Item key="7">Image Question</Menu.Item>
+                  <Menu.Item key="8">Tick Question</Menu.Item>
+                </SubMenu>
+                <SubMenu key="sub3" icon={<UserOutlined />} title="Admin">
+                  <Menu.Item key="9">Add Admin</Menu.Item>
+                  <Menu.Item key="10">See Admin</Menu.Item>
+                </SubMenu>
+                <Menu.Item
+                  key="11"
+                  icon={<LogoutOutlined />}
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </Menu.Item>
+              </Menu>
             </div>
           </div>
 
@@ -122,21 +94,21 @@ function Home() {
                   <div className="right__cardTitle">Survey</div>
                   <div className="right__cardNumber">72</div>
                   <div className="right__cardDesc">
-                    See detail <img src="assets/arrow-right.svg" alt="" />
+                    See detail <img src={arrowRight} alt="" />
                   </div>
                 </a>
                 <a className="right__card" href="view_customers.html">
                   <div className="right__cardTitle">User</div>
                   <div className="right__cardNumber">12</div>
                   <div className="right__cardDesc">
-                    See detail <img src="assets/arrow-right.svg" alt="" />
+                    See detail <img src={arrowRight} alt="" />
                   </div>
                 </a>
                 <a className="right__card" href="view_p_category.html">
                   <div className="right__cardTitle">Category</div>
-                  <div className="right__cardNumber">4</div>
+                  <div className="right__cardNumber">3</div>
                   <div className="right__cardDesc">
-                    See detail <img src="assets/arrow-right.svg" alt="" />
+                    See detail <img src={arrowRight} alt="" />
                   </div>
                 </a>
                 <a className="right__card" href="view_orders.html">
@@ -144,7 +116,7 @@ function Home() {
                   <div className="right__cardNumber">3</div>
                   <div className="right__cardDesc">
                     See detail
-                    <img src="assets/arrow-right.svg" alt="" />
+                    <img src={arrowRight} alt="" />
                   </div>
                 </a>
               </div>
@@ -170,7 +142,7 @@ function Home() {
                           chibaosinger@gmail.com
                         </td>
                         <td data-label="Number of participants">666</td>
-                        <td data-label="User ID">UID242365</td>
+                        <td data-label="User ID">ID242365</td>
                         <td data-label="Number of survey">1</td>
                         <td data-label="Status">Progress</td>
                       </tr>
@@ -180,7 +152,7 @@ function Home() {
                           midu@gmail.com
                         </td>
                         <td data-label="Number of participants">100</td>
-                        <td data-label="User ID">UID474562</td>
+                        <td data-label="User ID">ID474562</td>
                         <td data-label="Number of survey">2</td>
                         <td data-label="Status">Processing</td>
                       </tr>
@@ -190,7 +162,7 @@ function Home() {
                           miku@gmail.com
                         </td>
                         <td data-label="Number of participants">87</td>
-                        <td data-label="User ID">UID363123</td>
+                        <td data-label="User ID">ID363123</td>
                         <td data-label="Number of survey">5</td>
                         <td data-label="Status">Done</td>
                       </tr>
@@ -200,7 +172,7 @@ function Home() {
                           dangthimydung@gmail.com
                         </td>
                         <td data-label="Number of participants">2436</td>
-                        <td data-label="User ID">UID823725</td>
+                        <td data-label="User ID">ID823725</td>
                         <td data-label="Number of survey">12</td>
                         <td data-label="Status">New</td>
                       </tr>
@@ -210,7 +182,7 @@ function Home() {
                           hellosurvey@gmail.com
                         </td>
                         <td data-label="Number of participants">46</td>
-                        <td data-label="User ID">UID234634</td>
+                        <td data-label="User ID">ID234634</td>
                         <td data-label="Number of survey">12</td>
                         <td data-label="Status">New</td>
                       </tr>
