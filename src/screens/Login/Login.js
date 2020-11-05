@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Login.css";
 
 import {
@@ -9,19 +9,24 @@ import {
 } from "react-icons/fa";
 import { BsPeopleCircle } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
+import firebase from "../../constants/Firebase/FirebaseConfig";
 
 function Login() {
   let history = useHistory();
-  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // handle login
   const handleLogin = () => {
-    if (user == "thu" && password == "123") {
-      history.push("/home");
-    } else {
-      alert("Wrong password or account!");
-    }
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        history.push("/home");
+      })
+      .catch((err) => {
+        if (err.code) console.log(err.code);
+      });
   };
 
   // handle register
@@ -36,12 +41,16 @@ function Login() {
           <h1>Log in</h1>
           <input
             type="email"
+            autoFocus
+            required
             placeholder="Email"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
+            autoFocus
+            required
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

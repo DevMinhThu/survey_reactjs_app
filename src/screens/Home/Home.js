@@ -7,6 +7,7 @@ import "./Home.css";
 import Profile from "../../assets/profile.jpg";
 import arrowRight from "../../assets/arrow-right.svg";
 import arrowRightBlack from "../../assets/arrow-right-black.svg";
+import firebase from "../../constants/Firebase/FirebaseConfig";
 
 import {
   UserOutlined,
@@ -23,7 +24,16 @@ function Home() {
   let history = useHistory();
 
   const handleLogout = () => {
-    history.push("/");
+    firebase
+      .auth()
+      .signOut()
+      .then(function () {
+        console.log("LogOut Success!");
+        history.push("/");
+      })
+      .catch(function (error) {
+        console.log("LogOut Fail!");
+      });
   };
 
   return (

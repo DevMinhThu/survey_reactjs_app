@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Register.css";
+import firebase from "../../constants/Firebase/FirebaseConfig";
 
 function Register() {
   let history = useHistory();
-  const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleRegister = () => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        alert("Register Success " + email);
+        history.push("/");
+      })
+      .catch(function (error) {
+        if (error.code) console.log(error.code);
+      });
+  };
 
   return (
     <div className="containerRegister">
@@ -15,12 +28,8 @@ function Register() {
           <h1>Sign Up</h1>
           <input
             type="email"
-            placeholder="User Name"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-          />
-          <input
-            type="email"
+            autoFocus
+            required
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -34,17 +43,7 @@ function Register() {
           <input type="checkbox"></input>
           <span>Remember me</span>
           <a href="#">Forgot password?</a>
-          <button
-            onClick={() => {
-              if (user == "Thu" && password == "123") {
-                history.push("/home");
-              } else {
-                alert("Wrong password or account!");
-              }
-            }}
-          >
-            Register
-          </button>
+          <button onClick={handleRegister}>Register</button>
           <span className="copyright">&copy;2020</span>
         </div>
       </div>
