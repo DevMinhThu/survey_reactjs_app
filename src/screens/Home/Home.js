@@ -1,98 +1,18 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Menu } from "antd";
+import React from "react";
 import "antd/dist/antd.css";
 import "./Home.css";
 
-import Profile from "../../assets/profile.jpg";
 import arrowRight from "../../assets/arrow-right.svg";
 import arrowRightBlack from "../../assets/arrow-right-black.svg";
-import firebase from "../../constants/Firebase/FirebaseConfig";
-
-import {
-  UserOutlined,
-  DashboardOutlined,
-  LogoutOutlined,
-  FormOutlined,
-  SwitcherOutlined,
-  BarChartOutlined,
-} from "@ant-design/icons";
-
-const { SubMenu } = Menu;
+import LeftDashboard from "../../components/LeftDashboard/LeftDashboard";
 
 function Home() {
-  let history = useHistory();
-
-  const handleLogout = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(function () {
-        console.log("LogOut Success!");
-        history.push("/");
-      })
-      .catch(function (error) {
-        console.log("LogOut Fail!");
-      });
-  };
-
   return (
     <div className="wrapper">
       <div className="container">
         <div className="dashboard">
           {/* left dashboard */}
-          <div className="left">
-            <div className="left__content">
-              <div className="left__logo">SURVEY</div>
-              <div className="left__profile">
-                <div className="left__image">
-                  <img src={Profile} alt="" />
-                </div>
-                <p className="left__name">Hello World</p>
-              </div>
-
-              <Menu
-                defaultSelectedKeys={["1"]}
-                defaultOpenKeys={["sub1"]}
-                mode="inline"
-                style={{ border: 0 }}
-              >
-                <Menu.Item key="1" icon={<DashboardOutlined />}>
-                  Dashboard
-                </Menu.Item>
-                <Menu.Item key="2" icon={<BarChartOutlined />}>
-                  Create Survey
-                </Menu.Item>
-
-                <SubMenu key="sub1" icon={<FormOutlined />} title="Function">
-                  <Menu.Item key="3">Add Question</Menu.Item>
-                  <Menu.Item key="4">Edit Question</Menu.Item>
-                  <Menu.Item key="5">Delete Question</Menu.Item>
-                </SubMenu>
-
-                <SubMenu
-                  key="sub2"
-                  icon={<SwitcherOutlined />}
-                  title="Category"
-                >
-                  <Menu.Item key="6">Text Question</Menu.Item>
-                  <Menu.Item key="7">Image Question</Menu.Item>
-                  <Menu.Item key="8">Tick Question</Menu.Item>
-                </SubMenu>
-                <SubMenu key="sub3" icon={<UserOutlined />} title="Admin">
-                  <Menu.Item key="9">Add Admin</Menu.Item>
-                  <Menu.Item key="10">See Admin</Menu.Item>
-                </SubMenu>
-                <Menu.Item
-                  key="11"
-                  icon={<LogoutOutlined />}
-                  onClick={handleLogout}
-                >
-                  Log Out
-                </Menu.Item>
-              </Menu>
-            </div>
-          </div>
+          <LeftDashboard />
 
           {/* right dashboard */}
           <div className="right">

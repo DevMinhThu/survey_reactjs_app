@@ -23,9 +23,11 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         history.push("/home");
+        alert("Login Successfully!");
       })
       .catch((err) => {
         if (err.code) console.log(err.code);
+        alert("Check your account and password again!");
       });
   };
 
