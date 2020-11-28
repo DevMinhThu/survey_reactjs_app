@@ -3,16 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-page/editor": "^0.30.0",
+    "@react-page/plugins-slate": "^0.30.0",
+    "@react-page/react-page": "^0.30.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.7.3",
+    "bootstrap": "^4.5.3",
+    "bootstrap-slider": "^11.0.2",
+    "draft-js": "^0.11.7",
+    "draft-js-plugins-editor": "^3.0.0",
+    "draft-js-static-toolbar-plugin": "^3.0.1",
     "firebase": "^8.0.0",
+    "jquery": "^3.5.1",
+    "jquery-bar-rating": "^1.2.2",
+    "jquery-ui": "^1.12.1",
+    "nouislider": "^14.6.3",
+    "pretty-checkbox": "^3.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "select2": "^4.0.13",
+    "slate": "^0.59.0",
+    "slate-history": "^0.59.0",
+    "slate-react": "^0.59.0",
+    "survey-creator": "^1.8.17",
+    "surveyjs-widgets": "^1.8.17",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -38,5 +57,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0"
   }
 }

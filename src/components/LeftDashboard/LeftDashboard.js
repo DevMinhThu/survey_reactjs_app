@@ -13,6 +13,7 @@ import {
   FormOutlined,
   SwitcherOutlined,
   BarChartOutlined,
+  MenuUnfoldOutlined,
 } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 
@@ -54,9 +55,37 @@ function LeftDashboard() {
     history.push("/createSurvey");
   };
 
+  // move add question
+  const moveAddQuestion = () => {
+    history.push("/addQuestion");
+  };
+
+  // move edit question
+  const moveEditQuestion = () => {
+    history.push("/editQuestion");
+  };
+
+  // move delete question
+  const moveDeleteQuestion = () => {
+    history.push("/deleteQuestion");
+  };
+
   // move survey list
   const moveSurveyList = () => {
     history.push("/surveyList");
+  };
+
+  // move category
+  const moveTextCategory = () => {
+    history.push("/listTextQuestion");
+  };
+
+  const moveImgCategory = () => {
+    history.push("/listImgQuestion");
+  };
+
+  const moveSelectCategory = () => {
+    history.push("/listSelectQuestion");
   };
 
   return (
@@ -76,9 +105,12 @@ function LeftDashboard() {
           mode="inline"
           style={{ border: 0 }}
         >
+          {/* Dashboard */}
           <Menu.Item key="sub1" onClick={moveHome} icon={<DashboardOutlined />}>
             Dashboard
           </Menu.Item>
+
+          {/* Create Survey */}
           <Menu.Item
             key="2"
             onClick={moveCreSurvey}
@@ -87,24 +119,49 @@ function LeftDashboard() {
             Create Survey
           </Menu.Item>
 
-          <Menu.Item key="3" onClick={moveSurveyList} icon={<FormOutlined />}>
+          {/* Function */}
+          <SubMenu key="sub2" icon={<MenuUnfoldOutlined />} title="Function">
+            <Menu.Item key="3" onClick={moveAddQuestion}>
+              Add Question
+            </Menu.Item>
+            <Menu.Item key="4" onClick={moveEditQuestion}>
+              Edit Question
+            </Menu.Item>
+            <Menu.Item key="5" onClick={moveDeleteQuestion}>
+              Delete Question
+            </Menu.Item>
+          </SubMenu>
+
+          {/* Survey List */}
+          <Menu.Item key="6" onClick={moveSurveyList} icon={<FormOutlined />}>
             Survey List
           </Menu.Item>
 
-          <SubMenu key="sub2" icon={<SwitcherOutlined />} title="Category">
-            <Menu.Item key="4">Text Question</Menu.Item>
-            <Menu.Item key="5">Image Question</Menu.Item>
-            <Menu.Item key="6">Selected Question</Menu.Item>
+          {/* Category */}
+          <SubMenu key="sub3" icon={<SwitcherOutlined />} title="Category">
+            <Menu.Item key="7" onClick={moveTextCategory}>
+              Text Question
+            </Menu.Item>
+            <Menu.Item key="8" onClick={moveImgCategory}>
+              Image Question
+            </Menu.Item>
+            <Menu.Item key="9" onClick={moveSelectCategory}>
+              Selected Question
+            </Menu.Item>
           </SubMenu>
-          <SubMenu key="sub3" icon={<UserOutlined />} title="Admin">
-            <Menu.Item key="7" onClick={moveAddAdmin}>
+
+          {/* Admin */}
+          <SubMenu key="sub4" icon={<UserOutlined />} title="Admin">
+            <Menu.Item key="10" onClick={moveAddAdmin}>
               Add Admin
             </Menu.Item>
-            <Menu.Item key="8" onClick={moveViewAdmin}>
+            <Menu.Item key="11" onClick={moveViewAdmin}>
               See Admin
             </Menu.Item>
           </SubMenu>
-          <Menu.Item key="9" icon={<LogoutOutlined />} onClick={handleLogout}>
+
+          {/* LogOut */}
+          <Menu.Item key="12" icon={<LogoutOutlined />} onClick={handleLogout}>
             Log Out
           </Menu.Item>
         </Menu>
