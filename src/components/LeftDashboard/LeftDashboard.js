@@ -60,16 +60,6 @@ function LeftDashboard() {
     history.push("/addQuestion");
   };
 
-  // move edit question
-  const moveEditQuestion = () => {
-    history.push("/editQuestion");
-  };
-
-  // move delete question
-  const moveDeleteQuestion = () => {
-    history.push("/deleteQuestion");
-  };
-
   // move survey list
   const moveSurveyList = () => {
     history.push("/surveyList");
@@ -120,48 +110,44 @@ function LeftDashboard() {
           </Menu.Item>
 
           {/* Function */}
-          <SubMenu key="sub2" icon={<MenuUnfoldOutlined />} title="Function">
-            <Menu.Item key="3" onClick={moveAddQuestion}>
-              Add Question
-            </Menu.Item>
-            <Menu.Item key="4" onClick={moveEditQuestion}>
-              Edit Question
-            </Menu.Item>
-            <Menu.Item key="5" onClick={moveDeleteQuestion}>
-              Delete Question
-            </Menu.Item>
-          </SubMenu>
+          <Menu.Item
+            key="3"
+            icon={<MenuUnfoldOutlined />}
+            onClick={moveAddQuestion}
+          >
+            Question
+          </Menu.Item>
 
           {/* Survey List */}
-          <Menu.Item key="6" onClick={moveSurveyList} icon={<FormOutlined />}>
+          <Menu.Item key="4" onClick={moveSurveyList} icon={<FormOutlined />}>
             Survey List
           </Menu.Item>
 
           {/* Category */}
-          <SubMenu key="sub3" icon={<SwitcherOutlined />} title="Category">
-            <Menu.Item key="7" onClick={moveTextCategory}>
+          <SubMenu key="sub2" icon={<SwitcherOutlined />} title="Category">
+            <Menu.Item key="5" onClick={moveTextCategory}>
               Text Question
             </Menu.Item>
-            <Menu.Item key="8" onClick={moveImgCategory}>
+            <Menu.Item key="6" onClick={moveImgCategory}>
               Image Question
             </Menu.Item>
-            <Menu.Item key="9" onClick={moveSelectCategory}>
+            <Menu.Item key="7" onClick={moveSelectCategory}>
               Selected Question
             </Menu.Item>
           </SubMenu>
 
           {/* Admin */}
-          <SubMenu key="sub4" icon={<UserOutlined />} title="Admin">
-            <Menu.Item key="10" onClick={moveAddAdmin}>
+          <SubMenu key="sub3" icon={<UserOutlined />} title="Admin">
+            <Menu.Item key="8" onClick={moveAddAdmin}>
               Add Admin
             </Menu.Item>
-            <Menu.Item key="11" onClick={moveViewAdmin}>
+            <Menu.Item key="9" onClick={moveViewAdmin}>
               See Admin
             </Menu.Item>
           </SubMenu>
 
           {/* LogOut */}
-          <Menu.Item key="12" icon={<LogoutOutlined />} onClick={handleLogout}>
+          <Menu.Item key="10" icon={<LogoutOutlined />} onClick={handleLogout}>
             Log Out
           </Menu.Item>
         </Menu>

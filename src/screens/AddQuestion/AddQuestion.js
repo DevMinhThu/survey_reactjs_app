@@ -1,7 +1,7 @@
 import React from "react";
-import LeftDashboard from "../../../components/LeftDashboard/LeftDashboard";
-import "../../../constants/main.css";
-import SurveyCreator from "../../../components/CreatorSurvey/SurveyCreator";
+import LeftDashboard from "../../components/LeftDashboard/LeftDashboard";
+import "../../constants/main.css";
+import Question from "../../components/Question";
 
 function AddQuestion() {
   return (
@@ -15,9 +15,8 @@ function AddQuestion() {
           <div className="right">
             <div className="right__content">
               <div className="right__title">SURVEY DASHBOARD</div>
-            </div>
-            <div>
-              <SurveyCreator />
+              <p className="right__desc">Add Question</p>
+              <Question />
             </div>
           </div>
         </div>
