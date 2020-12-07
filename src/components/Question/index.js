@@ -3,13 +3,14 @@ import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
 import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
 import "draft-js-inline-toolbar-plugin/lib/plugin.css";
 import "./editorToolBarStyles.css";
+// import Answer from "../Answers";
 import { Checkbox } from "antd";
 
 const inlineToolbarPlugin = createInlineToolbarPlugin();
 const { InlineToolbar } = inlineToolbarPlugin;
 const plugins = [inlineToolbarPlugin];
-const question = "Click vào đây để nhập câu hỏi …";
-const title = " …";
+const question = "Nhập câu hỏi …";
+const title = "Đáp án …";
 
 export default class Question extends Component {
   state = {
@@ -33,7 +34,7 @@ export default class Question extends Component {
     return (
       <div>
         {/* questions */}
-        <div style={{ marginBottom: "2em", fontSize: "18px" }}>
+        <div style={{ marginBottom: "5px", fontSize: "18px" }}>
           <Editor
             editorState={this.state.editorQue}
             onChange={this.onChangeQue}
@@ -63,6 +64,7 @@ export default class Question extends Component {
         </div>
 
         {/* ANSWER */}
+        {/* <Answer/> */}
         <div style={{ marginBottom: "2em" }}>
           <h3 style={{ fontWeight: "bold", display: "flex" }}>3. Answer</h3>
           <div style={{ display: "flex" }}>

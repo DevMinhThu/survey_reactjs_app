@@ -16,7 +16,9 @@ function AddQuestion() {
             <div className="right__content">
               <div className="right__title">SURVEY DASHBOARD</div>
               <p className="right__desc">Add Question</p>
-              <Question />
+              <div className="right__formWrapper">
+                <Question />
+              </div>
             </div>
           </div>
         </div>

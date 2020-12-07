@@ -66,17 +66,17 @@ function LeftDashboard() {
   };
 
   // move category
-  const moveTextCategory = () => {
-    history.push("/listTextQuestion");
-  };
+  // const moveTextCategory = () => {
+  //   history.push("/listTextQuestion");
+  // };
 
-  const moveImgCategory = () => {
-    history.push("/listImgQuestion");
-  };
+  // const moveImgCategory = () => {
+  //   history.push("/listImgQuestion");
+  // };
 
-  const moveSelectCategory = () => {
-    history.push("/listSelectQuestion");
-  };
+  // const moveSelectCategory = () => {
+  //   history.push("/listSelectQuestion");
+  // };
 
   return (
     <div className="left">
@@ -124,7 +124,7 @@ function LeftDashboard() {
           </Menu.Item>
 
           {/* Category */}
-          <SubMenu key="sub2" icon={<SwitcherOutlined />} title="Category">
+          {/* <SubMenu key="sub2" icon={<SwitcherOutlined />} title="Category">
             <Menu.Item key="5" onClick={moveTextCategory}>
               Text Question
             </Menu.Item>
@@ -134,7 +134,7 @@ function LeftDashboard() {
             <Menu.Item key="7" onClick={moveSelectCategory}>
               Selected Question
             </Menu.Item>
-          </SubMenu>
+          </SubMenu> */}
 
           {/* Admin */}
           <SubMenu key="sub3" icon={<UserOutlined />} title="Admin">

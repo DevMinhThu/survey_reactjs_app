@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
 import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
 import "draft-js-inline-toolbar-plugin/lib/plugin.css";
+// import Question from "../../../components/Question";
 
 const inlineToolbarPlugin = createInlineToolbarPlugin();
 
 const { InlineToolbar } = inlineToolbarPlugin;
 
 const plugins = [inlineToolbarPlugin];
-const content = "Câu 1: Khảo sát là gì ?";
+const content = "Câu 1: Đây là ví dụ về câu hỏi ?";
 
 function CustomContent({ editor }) {
   const [editorContent, setEditorContent] = useState(
@@ -21,7 +22,13 @@ function CustomContent({ editor }) {
   return (
     <div>
       {/* questions */}
-      <div style={{ marginBottom: "2em", fontSize: "18px" }}>
+      <div
+        style={{
+          marginBottom: "2em",
+          fontSize: "16px",
+          fontWeight: "700",
+        }}
+      >
         <Editor
           editorState={editorContent}
           onChange={onChangeContent}

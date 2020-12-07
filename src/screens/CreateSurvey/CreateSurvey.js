@@ -2,7 +2,8 @@ import "antd/dist/antd.css";
 import React from "react";
 import LeftDashboard from "../../components/LeftDashboard/LeftDashboard";
 // import firebase from "../../constants/Firebase/FirebaseConfig";
-import "../../constants/main.css";
+// import "../../constants/main.css";
+import "./CreateStyles.css";
 import CustomNameSurvey from "./EditorNameSurvey/CustomNameSurvey";
 import CustomTitle from "./EditorTitle/CustomTitle";
 import CustomContent from "./EditorContent/CustomContent";
@@ -20,13 +21,15 @@ function CreateSurvey() {
           <div className="right">
             <div className="right__content">
               <div className="right__title">
-                <CustomNameSurvey />
+                <div className="right__formWrapper">
+                  <CustomNameSurvey />
+                </div>
               </div>
               <CustomTitle />
-              <CustomContent/>
-
-              {/* question */}
-              <Question />
+              <div className="formWrapper__QuesAndAns">
+                <CustomContent />
+                <Question />
+              </div>
             </div>
           </div>
         </div>

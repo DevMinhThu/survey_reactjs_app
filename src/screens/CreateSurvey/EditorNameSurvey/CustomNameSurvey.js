@@ -6,7 +6,7 @@ import "draft-js-inline-toolbar-plugin/lib/plugin.css";
 const inlineToolbarPlugin = createInlineToolbarPlugin();
 const { InlineToolbar } = inlineToolbarPlugin;
 const plugins = [inlineToolbarPlugin];
-const nameSurvey = "Nhập tên khảo sát …";
+const nameSurvey = "Tên khảo sát …";
 
 function CustomNameSurvey(editor) {
   const [editorNameSurvey, setEditorNameSurvey] = useState(
@@ -20,7 +20,7 @@ function CustomNameSurvey(editor) {
   return (
     <div>
       {/* sub */}
-      <div style={{ marginBottom: "2em", fontSize: "16px" }}>
+      <div style={{ marginBottom: "2em", fontSize: "18px" }}>
         <Editor
           editorState={editorNameSurvey}
           onChange={onChangeNameSurvey}

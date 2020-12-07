@@ -8,7 +8,7 @@ const inlineToolbarPlugin = createInlineToolbarPlugin();
 const { InlineToolbar } = inlineToolbarPlugin;
 
 const plugins = [inlineToolbarPlugin];
-const content = "Mô tả ...";
+const content = "Mô tả khảo sát của bạn ...";
 
 function CustomTitle({ editor }) {
   const [editorSub, setEditorSub] = useState(
@@ -21,7 +21,7 @@ function CustomTitle({ editor }) {
   return (
     <div>
       {/* questions */}
-      <div style={{ marginBottom: "2em", fontSize: "18px" }}>
+      <div style={{ marginBottom: "2em", fontSize: "16px" }}>
         <Editor
           editorState={editorSub}
           onChange={onChangeSub}
