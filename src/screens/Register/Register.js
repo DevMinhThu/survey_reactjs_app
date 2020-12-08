@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { useHistory } from "react-router-dom";
-import "./Register.css";
 import firebase from "../../constants/Firebase/FirebaseConfig";
+import "./Register.css";
+
+// Configure FirebaseUI.
+const uiConfig = {
+  signInFlow: "redirect",
+  signInSuccessUrl: "/home",
+  signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+};
 
 function Register() {
   let history = useHistory();
@@ -42,9 +50,13 @@ function Register() {
           />
           <input type="checkbox"></input>
           <span>Remember me</span>
-          <a href="#">Forgot password?</a>
+          <a href="forgotPassword">Forgot password?</a>
           <button onClick={handleRegister}>Register</button>
-          <span className="copyright">&copy;2020</span>
+          <StyledFirebaseAuth
+            uiConfig={uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+          <span className="copyright">&copy;Survey2020</span>
         </div>
       </div>
     </div>

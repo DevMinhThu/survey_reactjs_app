@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
-import "./Login.css";
-
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaGithub,
-  FaArrowAltCircleRight,
-} from "react-icons/fa";
+import React, { useState } from "react";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { BsPeopleCircle } from "react-icons/bs";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import firebase from "../../constants/Firebase/FirebaseConfig";
+import "./Login.css";
+
+// Configure FirebaseUI.
+const uiConfig = {
+  signInFlow: "redirect",
+  signInSuccessUrl: "/home",
+  signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+};
 
 function Login() {
   let history = useHistory();
@@ -59,30 +61,21 @@ function Login() {
           />
           <input type="checkbox"></input>
           <span>Remember me</span>
-          <a href="#">Forgot password?</a>
+          <a href="forgotPassword">Forgot password?</a>
           <button onClick={handleLogin}>Sign In</button>
-          <hr />
           <p>Or Connect With</p>
-          <hr />
-          <ul>
-            <li>
-              <FaFacebookF color="black" size="2rem" />
-            </li>
-            <li>
-              <FaTwitter color="black" size="2rem" />
-            </li>
-            <li>
-              <FaGithub color="black" size="2rem" />
-            </li>
-          </ul>
-          <span className="copyright">&copy;2020</span>
+          <StyledFirebaseAuth
+            uiConfig={uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+          <span className="copyright">&copy;Survey2020</span>
         </div>
       </div>
       {/* register */}
       <div className="register">
         <div className="container">
           <BsPeopleCircle size="10.5rem" />
-          <h2>Hello world!</h2>
+          <h2>Hi! Survey</h2>
           <p>Welcome to the Survey Website</p>
           <button onClick={handleRegister}>
             Register <FaArrowAltCircleRight size="1rem" />
