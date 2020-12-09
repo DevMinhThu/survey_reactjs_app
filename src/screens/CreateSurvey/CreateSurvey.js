@@ -1,13 +1,13 @@
 import "antd/dist/antd.css";
 import React from "react";
+import Answers from "../../components/Answers";
 import LeftDashboard from "../../components/LeftDashboard/LeftDashboard";
+import Question from "../../components/Question";
 // import firebase from "../../constants/Firebase/FirebaseConfig";
-// import "../../constants/main.css";
 import "./CreateStyles.css";
+import CustomContent from "./EditorContent/CustomContent";
 import CustomNameSurvey from "./EditorNameSurvey/CustomNameSurvey";
 import CustomTitle from "./EditorTitle/CustomTitle";
-import CustomContent from "./EditorContent/CustomContent";
-import Question from "../../components/Question";
 
 function CreateSurvey() {
   return (
@@ -27,8 +27,27 @@ function CreateSurvey() {
               </div>
               <CustomTitle />
               <div className="formWrapper__QuesAndAns">
+                {/* survey example */}
                 <CustomContent />
+                <Answers />
+                <Answers />
+                {/* edit  */}
                 <Question />
+              </div>
+
+              {/* button addQue */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "20px",
+                }}
+              >
+                <input
+                  type="submit"
+                  value="Thêm câu hỏi cho khảo sát"
+                  className="button_Add"
+                />
               </div>
             </div>
           </div>

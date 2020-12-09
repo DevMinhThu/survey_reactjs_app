@@ -14,10 +14,17 @@ function AddQuestion() {
           {/* right */}
           <div className="right">
             <div className="right__content">
-              <div className="right__title">SURVEY DASHBOARD</div>
+              <div className="right__title">SURVEY QUESTIONS</div>
               <p className="right__desc">Add Question</p>
               <div className="right__formWrapper">
                 <Question />
+                <div>
+                  <input
+                    type="submit"
+                    value="Thêm câu hỏi"
+                    className="handle_Submit"
+                  />
+                </div>
               </div>
             </div>
           </div>

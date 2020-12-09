@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
 import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
 import "draft-js-inline-toolbar-plugin/lib/plugin.css";
-// import Question from "../../../components/Question";
+import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
+import React, { useState } from "react";
 
 const inlineToolbarPlugin = createInlineToolbarPlugin();
 
 const { InlineToolbar } = inlineToolbarPlugin;
 
 const plugins = [inlineToolbarPlugin];
-const content = "Câu 1: Đây là ví dụ về câu hỏi ?";
+const content = "Khảo sát là gì ?";
 
 function CustomContent({ editor }) {
   const [editorContent, setEditorContent] = useState(

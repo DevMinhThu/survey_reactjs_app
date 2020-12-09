@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
-import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
-import "draft-js-inline-toolbar-plugin/lib/plugin.css";
-import "./editorAnswerStyles.css";
 import { Checkbox } from "antd";
+// import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
+import "draft-js-inline-toolbar-plugin/lib/plugin.css";
+import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
+import React, { Component } from "react";
+import "./editorAnswerStyles.css";
 
-const inlineToolbarPlugin = createInlineToolbarPlugin();
-const { InlineToolbar } = inlineToolbarPlugin;
-const plugins = [inlineToolbarPlugin];
-const answer = "Đáp án …";
+// const inlineToolbarPlugin = createInlineToolbarPlugin();
+// const { InlineToolbar } = inlineToolbarPlugin;
+// const plugins = [inlineToolbarPlugin];
+const answer = "Đáp án ... ";
 
-export default class Answer extends Component {
+export default class Answers extends Component {
   state = {
     editorAnswer: createEditorStateWithText(answer),
   };
@@ -25,42 +25,19 @@ export default class Answer extends Component {
     return (
       <div>
         {/* ANSWER */}
-        <div style={{ marginBottom: "5px", fontSize: "18px" }}>
+        <div style={{ marginBottom: "2em" }}>
           <div style={{ display: "flex" }}>
             <Checkbox style={{ marginRight: "10px" }} />
             <Editor
               editorState={this.state.editorAnswer}
               onChange={this.onChangeAnswer}
-              plugins={plugins}
+              // plugins={plugins}
               ref={(element) => {
                 this.editor = element;
               }}
             />
-            <InlineToolbar />
-          </div>
-          <div style={{ display: "flex" }}>
-            <Checkbox style={{ marginRight: "10px" }} />
-            <Editor
-              editorState={this.state.editorTitle}
-              onChange={this.onChangeAnswer}
-              plugins={plugins}
-              ref={(element) => {
-                this.editor = element;
-              }}
-            />
-            <InlineToolbar />
-          </div>
-          <div style={{ display: "flex" }}>
-            <Checkbox style={{ marginRight: "10px" }} />
-            <Editor
-              editorState={this.state.editorTitle}
-              onChange={this.onChangeAnswer}
-              plugins={plugins}
-              ref={(element) => {
-                this.editor = element;
-              }}
-            />
-            <InlineToolbar />
+            {/* <InlineToolbar /> */}
+            <input type="submit" value="+" className="styleAddAns" />
           </div>
         </div>
       </div>
