@@ -15,8 +15,8 @@ const uiConfig = {
 
 function Login() {
   let history = useHistory();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("hello@gmail.com");
+  const [password, setPassword] = useState("123456");
 
   // handle login
   const handleLogin = () => {

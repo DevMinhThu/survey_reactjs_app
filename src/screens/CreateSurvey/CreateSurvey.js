@@ -1,5 +1,7 @@
 import "antd/dist/antd.css";
 import React from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Answers from "../../components/Answers";
 import LeftDashboard from "../../components/LeftDashboard/LeftDashboard";
 import Question from "../../components/Question";
@@ -8,8 +10,32 @@ import "./CreateStyles.css";
 import CustomContent from "./EditorContent/CustomContent";
 import CustomNameSurvey from "./EditorNameSurvey/CustomNameSurvey";
 import CustomTitle from "./EditorTitle/CustomTitle";
+import RichEditor from "../../components/RichEditor";
 
 function CreateSurvey() {
+  let history = useHistory();
+  const [edit, setEdit] = useState(false);
+
+  const moveQuestion = () => {
+    history.push("/addQuestion");
+  };
+
+  const renderFormQues = () => {
+    return <Question />;
+  };
+
+  const renderCreateSurvey = () => {
+    return <CreateSurvey />;
+  };
+
+  const showFormQues = () => {
+    if (edit === false) {
+      return renderCreateSurvey();
+    } else {
+      return renderFormQues();
+    }
+  };
+
   return (
     <div className="wrapper">
       <div className="container">
@@ -22,7 +48,8 @@ function CreateSurvey() {
             <div className="right__content">
               <div className="right__title">
                 <div className="right__formWrapper">
-                  <CustomNameSurvey />
+                  {/* <CustomNameSurvey /> */}
+                  <RichEditor />
                 </div>
               </div>
               <CustomTitle />
@@ -47,6 +74,7 @@ function CreateSurvey() {
                   type="submit"
                   value="Thêm câu hỏi cho khảo sát"
                   className="button_Add"
+                  onClick={moveQuestion}
                 />
               </div>
             </div>
