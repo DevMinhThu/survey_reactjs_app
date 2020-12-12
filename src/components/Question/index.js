@@ -1,58 +1,36 @@
-// import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
 import "draft-js-inline-toolbar-plugin/lib/plugin.css";
-// import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
-// import { EditorState } from "draft-js";
-// import { convertToHTML, convertFromHTML } from "draft-convert";
 import React, { useState } from "react";
 import Answers from "../Answers";
 import "./editorToolBarStyles.css";
 import RichEditor from "../../components/RichEditor";
 
-// const inlineToolbarPlugin = createInlineToolbarPlugin();
-// const { InlineToolbar } = inlineToolbarPlugin;
-// const plugins = [inlineToolbarPlugin];
 const defaultQuestion = {
-  title: "Noi dung cau hoi",
+  title: "Nhập câu hỏi",
   questionType: "text",
 };
 
-function Question({ editor, question }) {
-  // const [editorQue, setEditorQue] = useState(
-  //   EditorState.push(
-  //     EditorState.createEmpty(),
-  //     convertFromHTML(defaultQuestion.title)
-  //   )
-  // );
-
+function Question() {
   const [editing, setEditing] = useState(false);
 
   const renderAnswer = () => {
-    return <Answers />;
+    return (
+      <div>
+        <div
+          style={{
+            marginBottom: "5px",
+            fontSize: "16px",
+            fontWeight: "700",
+          }}
+        >
+          <RichEditor content={defaultQuestion.title} />
+        </div>
+        <Answers />
+      </div>
+    );
   };
 
-  const buttonQueSelect = (e) => {
-    console.log(e.target.value);
-    setEditing(true);
-  };
-
-  const showAnswer = () => {
-    if (editing === true) {
-      return renderAnswer();
-    } else {
-      return;
-    }
-  };
-
-  // const onChangeQue = (editorQue) => {
-  //   console.log(editorQue.getCurrentContent());
-  //   console.log(convertToHTML(editorQue.getCurrentContent()));
-  //   //console.log(convertToHTML)
-  //   setEditorQue(editorQue);
-  // };
-
-  return (
-    <div>
-      {/* questions */}
+  const renderQuestionText = () => {
+    return (
       <div
         style={{
           marginBottom: "5px",
@@ -60,18 +38,26 @@ function Question({ editor, question }) {
           fontWeight: "700",
         }}
       >
-        {/* <Editor
-          editorState={editorQue}
-          onChange={onChangeQue}
-          plugins={plugins}
-          ref={(element) => {
-            editor = element;
-          }}
-        />
-        <InlineToolbar /> */}
-        <RichEditor content="Xin chao test"/>
+        <RichEditor content={defaultQuestion.title} />
       </div>
+    );
+  };
 
+  const buttonQueSelect = (e) => {
+    console.log(e.target.value);
+    setEditing(!editing);
+  };
+
+  const showAnswer = () => {
+    if (editing === true) {
+      return renderAnswer();
+    } else {
+      return renderQuestionText();
+    }
+  };
+
+  return (
+    <div>
       {/* title */}
       <div style={{ marginBottom: "2em" }}>
         <form>
@@ -82,15 +68,26 @@ function Question({ editor, question }) {
             name="type_question"
             id="type_question"
             style={{ marginRight: "10px" }}
-            // onChange={handleSelect}
-            // value={value}
             onChange={buttonQueSelect}
           >
-            <option value="text">Câu hỏi Text</option>
+            <option value="text" selected>
+              Câu hỏi Text
+            </option>
             <option value="selection">Câu hỏi lựa chọn</option>
           </select>
         </form>
       </div>
+
+      {/* questions */}
+      {/* <div
+        style={{
+          marginBottom: "5px",
+          fontSize: "16px",
+          fontWeight: "700",
+        }}
+      >
+        <RichEditor content={defaultQuestion.title} />
+      </div> */}
 
       {/* ANSWER */}
       <div style={{ marginBottom: "2em" }}>

@@ -16,7 +16,7 @@ function AddQuestion() {
             <div className="right__content">
               <div className="right__title">SURVEY QUESTIONS</div>
               <p className="right__desc">Add Question</p>
-              <div className="right__formWrapper">
+              <div className="form__Questions">
                 <Question />
                 <div>
                   <input

@@ -9,6 +9,8 @@ const { InlineToolbar } = inlineToolbarPlugin;
 
 const plugins = [inlineToolbarPlugin];
 const content = "Khảo sát là gì ?";
+console.log(InlineToolbar);
+console.log(plugins)
 
 function CustomContent({ editor }) {
   const [editorContent, setEditorContent] = useState(

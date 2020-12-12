@@ -1187,3 +1187,13 @@ body {
 .handle_Submit:hover {
   border-radius: 20px;
 }
+
+.form__Questions {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

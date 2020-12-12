@@ -27,3 +27,11 @@
 .styleAddAns:hover {
   background-color: #6b71b7;
 }
+
+.styleRichEditor {
+  display: flex;
+}
+/* 
+.styleRichEditor:hover {
+  background-color: #e2dff2;
+} */

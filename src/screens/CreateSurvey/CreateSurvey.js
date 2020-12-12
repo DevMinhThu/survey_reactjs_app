@@ -1,6 +1,5 @@
 import "antd/dist/antd.css";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Answers from "../../components/Answers";
 import LeftDashboard from "../../components/LeftDashboard/LeftDashboard";
@@ -8,9 +7,8 @@ import Question from "../../components/Question";
 // import firebase from "../../constants/Firebase/FirebaseConfig";
 import "./CreateStyles.css";
 import CustomContent from "./EditorContent/CustomContent";
-import CustomNameSurvey from "./EditorNameSurvey/CustomNameSurvey";
-import CustomTitle from "./EditorTitle/CustomTitle";
-import RichEditor from "../../components/RichEditor";
+import EditorNameSurvey from "./EditorNameSurvey";
+import EditorTitle from "./EditorTitle";
 
 function CreateSurvey() {
   let history = useHistory();
@@ -48,11 +46,12 @@ function CreateSurvey() {
             <div className="right__content">
               <div className="right__title">
                 <div className="right__formWrapper">
-                  {/* <CustomNameSurvey /> */}
-                  <RichEditor />
+                  {/* editor name survey */}
+                  <EditorNameSurvey />
                 </div>
               </div>
-              <CustomTitle />
+              {/* editor title */}
+              <EditorTitle />
               <div className="formWrapper__QuesAndAns">
                 {/* survey example */}
                 <CustomContent />
