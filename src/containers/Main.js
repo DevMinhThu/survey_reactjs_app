@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Login from "../screens/Login/Login";
-import Register from "../screens/Register/Register";
 import Home from "../screens/Home/Home";
 import AddAdmin from "../screens/Admin/AddAdmin/AddAdmin";
 import ViewAdmin from "../screens/Admin/ViewAdmin/ViewAdmin";
@@ -13,6 +11,8 @@ import AddQuestion from "../screens/AddQuestion/AddQuestion";
 import ListTextQuestion from "../screens/Category/ListTextQuestion";
 import ListImgQuestion from "../screens/Category/ListImgQuestion";
 import ListSelectQuestion from "../screens/Category/ListSelectQuestion";
+import SignIn from "../screens/SignIn/SignIn";
+import SignUp from "../screens/SignUp/SignUp";
 
 export default class Main extends Component {
   render() {
@@ -20,8 +20,8 @@ export default class Main extends Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route exact path="/" component={SignIn} />
+            <Route path="/register" component={SignUp} />
             <Route path="/home" component={Home} />
             <Route path="/addAdmin" component={AddAdmin} />
             <Route path="/viewAdmin" component={ViewAdmin} />
