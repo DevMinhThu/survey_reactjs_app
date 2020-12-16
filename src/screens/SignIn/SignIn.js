@@ -44,10 +44,10 @@ function Login() {
     <div>
       <div className="login-box">
         <div className="lb-header">
-          <a href="#" className="active" id="login-box-link">
+          <a href="" id="login-box-link">
             LOGIN
           </a>
-          <a href="#" id="signup-box-link" onClick={handleRegister}>
+          <a href="" id="signup-box-link" onClick={handleRegister}>
             SIGN UP
           </a>
         </div>

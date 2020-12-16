@@ -1197,3 +1197,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.styleButtonAdd {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #6b71b7;
+  color: #fff;
+}
+
+.containerButton {
+  margin-bottom: 20px;
+}

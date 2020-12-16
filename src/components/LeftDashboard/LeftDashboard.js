@@ -11,7 +11,6 @@ import {
   DashboardOutlined,
   LogoutOutlined,
   FormOutlined,
-  SwitcherOutlined,
   BarChartOutlined,
   MenuUnfoldOutlined,
 } from "@ant-design/icons";

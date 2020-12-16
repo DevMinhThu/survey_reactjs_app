@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "question": "Khảo sát là gì?",
+        "type": "Select"
+    },
+    {
+        "id": 2,
+        "question": "Bạn bao nhiêu tuổi",
+        "type": "Image"
+    },
+    {
+        "id": 3,
+        "question": "Học sinh hay người đi làm?",
+        "type": "Text"
+    }
+]
