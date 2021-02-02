@@ -3,6 +3,7 @@ import LeftDashboard from "../../components/LeftDashboard/LeftDashboard";
 import "../../constants/main.css";
 import Question from "../../components/Question";
 import MyData from "../../constants/Data/data.json";
+import IconTrash from "../../assets/icon-trash-black.svg";
 
 function AddQuestion() {
   const [statusQue, setStatusQue] = useState(false);
@@ -18,6 +19,16 @@ function AddQuestion() {
     }
   };
 
+  const handleDelete = (idQuestion) => {
+    var tempData = data.filter((item) => item.id !== idQuestion);
+    // setData(data === tempData);
+    // data.forEach((value, key) => {
+    //   if (value.id === idQuestion) {
+    //     console.log(key);
+    //   }
+    // });
+  };
+
   const renderTableData = () => {
     return data.map((props) => {
       const { id, question, type } = props;
@@ -26,6 +37,24 @@ function AddQuestion() {
           <td>{id}</td>
           <td>{question}</td>
           <td>{type}</td>
+          <td
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <button onClick={handleDelete(id)}>
+              <img
+                src={IconTrash}
+                alt=""
+                style={{
+                  width: 26,
+                  height: 26,
+                  padding: 4,
+                }}
+              />
+            </button>
+          </td>
         </tr>
       );
     });

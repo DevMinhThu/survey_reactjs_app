@@ -2,16 +2,19 @@
     {
         "id": 1,
         "question": "Khảo sát là gì?",
-        "type": "Select"
+        "type": "Select",
+        "Delete": ""
     },
     {
         "id": 2,
         "question": "Bạn bao nhiêu tuổi",
-        "type": "Image"
+        "type": "Select",
+        "action": ""
     },
     {
         "id": 3,
         "question": "Học sinh hay người đi làm?",
-        "type": "Text"
+        "type": "Text",
+        "action": ""
     }
 ]
