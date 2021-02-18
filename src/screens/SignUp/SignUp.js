@@ -38,10 +38,10 @@ function Register() {
     <div>
       <div className="login-box">
         <div className="lb-header">
-          <a href="#" onClick={moveLogin} className="active">
+          <a href="/" onClick={moveLogin} className="active">
             LOGIN
           </a>
-          <a href="#" id="signup-box-link">
+          <a href="/register" id="signup-box-link">
             SIGN UP
           </a>
         </div>

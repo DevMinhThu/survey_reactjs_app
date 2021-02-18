@@ -22,11 +22,6 @@ function AddQuestion() {
   const handleDelete = (idQuestion) => {
     var tempData = data.filter((item) => item.id !== idQuestion);
     // setData(data === tempData);
-    // data.forEach((value, key) => {
-    //   if (value.id === idQuestion) {
-    //     console.log(key);
-    //   }
-    // });
   };
 
   const renderTableData = () => {

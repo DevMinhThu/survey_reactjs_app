@@ -21,13 +21,15 @@ function Login() {
 
   // handle login
   const handleLogin = () => {
+    console.log("check");
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        console.log("login success");
         history.push("/home");
         alert("Login Successfully!");
+        setEmail("");
+        setPassword("");
       })
       .catch((err) => {
         if (err.code) console.log(err.code);
@@ -44,10 +46,10 @@ function Login() {
     <div>
       <div className="login-box">
         <div className="lb-header">
-          <a href="" id="login-box-link">
+          <a href="/" id="login-box-link">
             LOGIN
           </a>
-          <a href="" id="signup-box-link" onClick={handleRegister}>
+          <a href="/register" id="signup-box-link" onClick={handleRegister}>
             SIGN UP
           </a>
         </div>

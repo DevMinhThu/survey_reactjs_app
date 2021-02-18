@@ -20,28 +20,28 @@ function Home() {
               <div className="right__title">Survey Dashboard</div>
               <p className="right__desc">DASHBOARD</p>
               <div className="right__cards">
-                <a className="right__card" href="view_product.html">
+                <a className="right__card" href="#">
                   <div className="right__cardTitle">Survey</div>
                   <div className="right__cardNumber">72</div>
                   <div className="right__cardDesc">
                     See detail <img src={arrowRight} alt="" />
                   </div>
                 </a>
-                <a className="right__card" href="view_customers.html">
+                <a className="right__card" href="#">
                   <div className="right__cardTitle">User</div>
                   <div className="right__cardNumber">12</div>
                   <div className="right__cardDesc">
                     See detail <img src={arrowRight} alt="" />
                   </div>
                 </a>
-                <a className="right__card" href="view_p_category.html">
+                <a className="right__card" href="#">
                   <div className="right__cardTitle">Category</div>
                   <div className="right__cardNumber">3</div>
                   <div className="right__cardDesc">
                     See detail <img src={arrowRight} alt="" />
                   </div>
                 </a>
-                <a className="right__card" href="view_orders.html">
+                <a className="right__card" href="#">
                   <div className="right__cardTitle">Function</div>
                   <div className="right__cardNumber">3</div>
                   <div className="right__cardDesc">
