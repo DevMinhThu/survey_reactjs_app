@@ -4,6 +4,7 @@ import "../../constants/main.css";
 import Question from "../../components/Question";
 import MyData from "../../constants/Data/data.json";
 import IconTrash from "../../assets/icon-trash-black.svg";
+import { Button } from "antd";
 
 function AddQuestion() {
   const [statusQue, setStatusQue] = useState(false);
@@ -19,17 +20,18 @@ function AddQuestion() {
     }
   };
 
-  const handleDelete = (idQuestion) => {
-    var tempData = data.filter((item) => item.id !== idQuestion);
-    // setData(data === tempData);
+  const handleDelete = (index) => {
+    let itemsCopy = [...data];
+    itemsCopy.splice(index, 1);
+    setData(itemsCopy);
   };
 
   const renderTableData = () => {
     return data.map((props) => {
-      const { id, question, type } = props;
+      const { index, question, type } = props;
       return (
-        <tr key={id}>
-          <td>{id}</td>
+        <tr key={index}>
+          <td>{index}</td>
           <td>{question}</td>
           <td>{type}</td>
           <td
@@ -38,7 +40,11 @@ function AddQuestion() {
               justifyContent: "center",
             }}
           >
-            <button onClick={handleDelete(id)}>
+            <button
+              style={{ borderRadius: 50 }}
+              key={index}
+              onClick={() => handleDelete(index)}
+            >
               <img
                 src={IconTrash}
                 alt=""
@@ -84,11 +90,21 @@ function AddQuestion() {
                 {/* <Question /> */}
                 {showQuestion()}
                 <div>
-                  <input
+                  {/* <input
                     type="submit"
                     value="Thêm câu hỏi"
                     className="handle_Submit"
-                  />
+                  /> */}
+                  <Button
+                    style={{
+                      color: "#fff",
+                      background: "#6b71b7",
+                      transition: "all 0.3s ease",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    Thêm câu hỏi
+                  </Button>
                 </div>
               </div>
               <div style={{ marginTop: "20px" }}>

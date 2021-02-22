@@ -1,20 +1,38 @@
 [
     {
-        "id": 1,
+        "index": 1,
         "question": "Khảo sát là gì?",
         "type": "Select",
         "Delete": ""
     },
     {
-        "id": 2,
+        "index": 2,
         "question": "Bạn bao nhiêu tuổi",
         "type": "Select",
-        "action": ""
+        "Delete": ""
     },
     {
-        "id": 3,
-        "question": "Học sinh hay người đi làm?",
+        "index": 3,
+        "question": "Nghề nghiệp?",
         "type": "Text",
-        "action": ""
+        "Delete": ""
+    },
+    {
+        "index": 4,
+        "question": "Bạn có dùng MXH không?",
+        "type": "Select",
+        "Delete": ""
+    },
+    {
+        "index": 5,
+        "question": "Thể loại phim bạn yêu thích?",
+        "type": "Select",
+        "Delete": ""
+    },
+    {
+        "index": 6,
+        "question": "Thể loại âm nhạc mà bạn thường nghe?",
+        "type": "Text",
+        "Delete": ""
     }
 ]

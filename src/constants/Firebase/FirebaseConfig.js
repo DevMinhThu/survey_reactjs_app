@@ -1,5 +1,8 @@
 import firebase from "firebase";
 
+// add the firebase services
+import "firebase/firestore";
+
 var firebaseConfig = {
   apiKey: "AIzaSyB1szWYQfR2hyDFJi5F5a8deqvO-nu5A_I",
   authDomain: "surveywebapp-eee11.firebaseapp.com",
