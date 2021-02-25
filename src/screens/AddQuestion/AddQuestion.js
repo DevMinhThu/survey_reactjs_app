@@ -21,9 +21,11 @@ function AddQuestion() {
   };
 
   const handleDelete = (index) => {
-    let itemsCopy = [...data];
-    itemsCopy.splice(index, 1);
-    setData(itemsCopy);
+    let dataCopy = [...data];
+    if (index <= dataCopy.length) {
+      dataCopy.splice(index - 1, 1);
+      setData(dataCopy);
+    }
   };
 
   const renderTableData = () => {
@@ -90,11 +92,6 @@ function AddQuestion() {
                 {/* <Question /> */}
                 {showQuestion()}
                 <div>
-                  {/* <input
-                    type="submit"
-                    value="Thêm câu hỏi"
-                    className="handle_Submit"
-                  /> */}
                   <Button
                     style={{
                       color: "#fff",

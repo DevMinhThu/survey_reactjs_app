@@ -21,13 +21,13 @@ function Login() {
 
   // handle login
   const handleLogin = () => {
-    console.log("check");
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        history.push("/home");
         alert("Login Successfully!");
+        console.log("ssss");
+        history.push("/home");
         setEmail("");
         setPassword("");
       })

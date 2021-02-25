@@ -51,12 +51,12 @@ function SurveyList() {
                         <td data-label="Key Word">Educational innovation</td>
                         <td data-label="Time">2020-07-13 21:31:05</td>
                         <td data-label="Edit" className="right__iconTable">
-                          <a href="">
+                          <a href="/surveyList">
                             <img src={IconEdit} alt="" />
                           </a>
                         </td>
                         <td data-label="Delete" className="right__iconTable">
-                          <a href="">
+                          <a href="/surveyList">
                             <img src={IconTrash} alt="" />
                           </a>
                         </td>
@@ -74,12 +74,12 @@ function SurveyList() {
                         </td>
                         <td data-label="Time">2020-07-13 22:19:01</td>
                         <td data-label="Edit" className="right__iconTable">
-                          <a href="">
+                          <a href="/surveyList">
                             <img src={IconEdit} alt="" />
                           </a>
                         </td>
                         <td data-label="Delete" className="right__iconTable">
-                          <a href="">
+                          <a href="/surveyList">
                             <img src={IconTrash} alt="" />
                           </a>
                         </td>
@@ -95,12 +95,12 @@ function SurveyList() {
                         <td data-label="Key Word">Congress voting</td>
                         <td data-label="Time">2020-07-13 21:30:41</td>
                         <td data-label="Edit" className="right__iconTable">
-                          <a href="">
+                          <a href="/surveyList">
                             <img src={IconEdit} alt="" />
                           </a>
                         </td>
                         <td data-label="Delete" className="right__iconTable">
-                          <a href="">
+                          <a href="/surveyList">
                             <img src={IconTrash} alt="" />
                           </a>
                         </td>
